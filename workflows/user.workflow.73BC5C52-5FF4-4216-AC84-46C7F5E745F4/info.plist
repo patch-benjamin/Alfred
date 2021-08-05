@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5A6FAE9-2239-4F5D-B644-052855E03C32</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>472AEFE4-C20F-45EB-B9BD-988AD211B667</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A91337E6-C5D1-47CD-B760-8C9DB441701D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B774C253-3DAF-410A-8DDF-95366C80CF2A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>472AEFE4-C20F-45EB-B9BD-988AD211B667</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D5A6FAE9-2239-4F5D-B644-052855E03C32</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CA516817-3B71-4A5A-A349-9A00E81D0A3F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>uncapitalizeClipboard</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>var="$(pbpaste)"
+declare -a modifiedStrings=()
+read -ra unmodifiedStrings -d '' &lt;&lt;&lt;"$var"
+for str in "${unmodifiedStrings[@]}"
+do
+string="$(tr '[:lower:]' '[:upper:]' &lt;&lt;&lt; ${str:0:1})${str:1}"
+modifiedStrings+=("$string")
+done
+
+printf -v output "%s\n" "${modifiedStrings[@]}"
+
+echo "$output" | pbcopy
+
+echo "$output"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D5A6FAE9-2239-4F5D-B644-052855E03C32</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Clipboard Capitalized</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CA516817-3B71-4A5A-A349-9A00E81D0A3F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>capitalizeclipboard</string>
+				<key>subtext</key>
+				<string>capitalize or uncapitalize keyboard</string>
+				<key>text</key>
+				<string>Capitalize Clipboard Contents</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>uncapitalizeclipboard</string>
+				<key>subtext</key>
+				<string>capitalize or uncapitalize keyboard</string>
+				<key>text</key>
+				<string>Uncapitalize Clipboard Contents</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B774C253-3DAF-410A-8DDF-95366C80CF2A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Clipboard Uncapitalized</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A91337E6-C5D1-47CD-B760-8C9DB441701D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>var="$(pbpaste)"
+declare -a modifiedStrings=()
+read -ra unmodifiedStrings -d '' &lt;&lt;&lt;"$var"
+for str in "${unmodifiedStrings[@]}"
+do
+string="$(tr '[:upper:]' '[:lower:]' &lt;&lt;&lt; ${str:0:1})${str:1}"
+modifiedStrings+=("$string")
+done
+
+printf -v output "%s\n" "${modifiedStrings[@]}"
+
+echo "$output" | pbcopy
+
+echo "$output"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>472AEFE4-C20F-45EB-B9BD-988AD211B667</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>472AEFE4-C20F-45EB-B9BD-988AD211B667</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>A91337E6-C5D1-47CD-B760-8C9DB441701D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>460</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>B774C253-3DAF-410A-8DDF-95366C80CF2A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>CA516817-3B71-4A5A-A349-9A00E81D0A3F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>450</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>D5A6FAE9-2239-4F5D-B644-052855E03C32</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "[<#link_name#>](x-source-tag:\/\/<#tag_name#>)",
+    "dontautoexpand" : true,
+    "uid" : "32F2DE90-F810-4266-A269-C3EA244B9F24",
+    "name" : "tagReference",
+    "keyword" : "tagreference"
+  }
+}

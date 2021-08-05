@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "var objectWillChange = PassthroughSubject<Void, Never>()\n",
+    "dontautoexpand" : true,
+    "uid" : "14BFED75-8A8C-4863-9562-04BBFE71BCF4",
+    "name" : "ObservableObject",
+    "keyword" : "subcription"
+  }
+}

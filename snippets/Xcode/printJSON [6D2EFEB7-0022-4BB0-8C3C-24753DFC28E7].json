@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "po print(String(data: JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted]), encoding: .utf8)!)",
+    "dontautoexpand" : true,
+    "uid" : "6D2EFEB7-0022-4BB0-8C3C-24753DFC28E7",
+    "name" : "printJSON",
+    "keyword" : "json"
+  }
+}

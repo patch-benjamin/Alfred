@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "let formatter = DateFormatter()\nformatter.dateFormat = \"yyyy\/MM\/dd\"\nlet date = formatter.date(from: \"1991\/02\/14\")!\n",
+    "dontautoexpand" : true,
+    "uid" : "302982D4-E173-466E-94BD-2D4723C2EAC9",
+    "name" : "specificDate",
+    "keyword" : "date"
+  }
+}

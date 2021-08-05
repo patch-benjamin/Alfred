@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "    init(from decoder: Decoder) throws {\n        let values = try decoder.container(keyedBy: CodingKeys.self)\n        <#variableName#> = try values.decode(<#type#>.self, forKey: .<#CodingKeyValue#>)\n\n    }\n",
+    "dontautoexpand" : true,
+    "uid" : "CCC6821A-9B02-4711-B990-E915FE1B62B6",
+    "name" : "Codable Init",
+    "keyword" : ""
+  }
+}
