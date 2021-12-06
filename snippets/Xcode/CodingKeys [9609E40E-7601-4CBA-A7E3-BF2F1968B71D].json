@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "enum CodingKeys: String, CodingKey {",
+    "uid" : "9609E40E-7601-4CBA-A7E3-BF2F1968B71D",
+    "name" : "CodingKeys",
+    "keyword" : "codable"
+  }
+}
